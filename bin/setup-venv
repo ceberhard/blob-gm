@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+ME=$(basename $0)
+BASE=$(readlink -f $(dirname $0)/..)
+
+VENV_DIR=${BASE}/venv
+
+[[ -d ${VENV_DIR} ]] && rm -rf ${VENV_DIR}
+
+/usr/bin/python3 -m venv ${VENV_DIR}
+
+${VENV_DIR}/bin/pip install --upgrade pip
+
+[[ -f $BASE/requirements.txt ]] && ${VENV_DIR}/bin/pip --no-cache-dir install --upgrade -r $BASE/requirements.txt
+
+
