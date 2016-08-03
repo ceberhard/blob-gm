@@ -3,4 +3,6 @@
 ME="$(basename $0)"
 BASE="$(readlink -f $(dirname $0)/..)"
 
-$BASE/venv/bin/python3 ./tk_sample.py
+# $BASE/venv/bin/python3 ./tk_sample.py
+$BASE/venv/bin/python3 ./cocos2d_sample/cocos_sample.py
+
